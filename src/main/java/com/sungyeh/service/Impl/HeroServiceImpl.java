@@ -1,8 +1,8 @@
-package com.sungyeh.domain.service.Impl;
+package com.sungyeh.service.Impl;
 
 import com.sungyeh.domain.Hero;
-import com.sungyeh.domain.repository.HeroRepository;
-import com.sungyeh.domain.service.HeroService;
+import com.sungyeh.repository.HeroRepository;
+import com.sungyeh.service.HeroService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +10,7 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
-
-@Service("com.sungyeh.domain.service.Impl.HeroServiceImpl")
+@Service("com.sungyeh.service.Impl.HeroServiceImpl")
 @Transactional
 public class HeroServiceImpl implements HeroService {
     @Resource

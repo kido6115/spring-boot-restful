@@ -1,7 +1,7 @@
-package com.sungyeh.domain.api;
+package com.sungyeh.api;
 
 import com.sungyeh.domain.Hero;
-import com.sungyeh.domain.service.HeroService;
+import com.sungyeh.service.HeroService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

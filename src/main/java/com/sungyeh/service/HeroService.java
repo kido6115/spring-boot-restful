@@ -1,4 +1,4 @@
-package com.sungyeh.domain.service;
+package com.sungyeh.service;
 
 import com.sungyeh.domain.Hero;
 

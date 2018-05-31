@@ -1,4 +1,4 @@
-package com.sungyeh.domain.repository;
+package com.sungyeh.repository;
 
 import com.sungyeh.domain.Hero;
 import org.springframework.data.jpa.repository.JpaRepository;
