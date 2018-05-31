@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+#    url: jdbc:h2:file:~/testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL #絕對路徑
+#    url: jdbc:h2:./testdb;DB_CLOSE_DELAY=-1;MODE=Oracle #相對路徑
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1 #內存
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    maximum-pool-size: 10
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+  jpa:
+    generate-ddl: true
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
