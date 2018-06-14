@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+<body>
+ <div id="map"></div>
+<div id="button">
+</div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgkSTUKQ5NYL99GCmZrNPEaXEoNHi2Mq0&callback=initMap">
+</script>
+<script>
+    function initMap() {
+        var target = {lat:  23.972969, lng: 120.474307};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: target
+        });
+         map.data.loadGeoJson('http://localhost:8080/api/chcg');
+        map.data.loadGeoJson('http://localhost:8080/marker');
+        // var marker = new google.maps.Marker({
+        //     position: target,
+        //     map: map,
+        //     title: 'Hello World!'
+        // });
+
+  // map.data.setStyle({
+  //   strokeWeight: 1,
+  //   strokeOpacity: .5,
+  //   strokeColor: '#000',
+  //   fillColor: '#f00',
+  //   fillOpacity: .3
+  // });
+        map.data.setStyle(function(feature) {
+                return {
+                    'icon': feature.getProperty('icon'),strokeWeight: 1,
+                    strokeOpacity: .5,
+                    strokeColor: '#000',
+                    fillColor: '#f00',
+                    fillOpacity: .3
+                };
+
+        });
+        map.data.addListener('click', function(event) {
+            console.log(event.feature.f);
+        });
+        map.data.addListener('mouseover', function(event) {
+            map.data.revertStyle();
+            map.data.overrideStyle(event.feature, {fillColor: '#000'});
+            console.log(event.feature.getProperty('TOWN_ID'));
+        });
+
+        map.data.addListener('mouseout', function(event) {
+            map.data.revertStyle();
+        });
+    }
+</script>
+<style>
+    #map {
+        height: 600px;
+        width: 100%;
+    }
+</style>
+</body>
+</html>
