@@ -37,7 +37,6 @@ public class GisController {
             map1.put("type","Point");
             double double1=120.474307+j;
             double double2=23.972969+j;
-            System.out.println( double1 + "" + double2);
             map1.put("coordinates", new double[]{double1, double2});
             feature.setGeometry(map1);
             Map<String,String> map2=new HashMap<>();
