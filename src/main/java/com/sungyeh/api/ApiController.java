@@ -5,6 +5,9 @@ import com.sungyeh.service.HeroService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.List;
 
 @RestController
@@ -37,5 +40,28 @@ public class ApiController {
     @DeleteMapping("hero/{id}")
     public Hero delete(@PathVariable("id") Integer id) {
         return heroService.delete(id);
+    }
+    @GetMapping("chcg")
+    public String chcg(){
+        BufferedReader br = null;
+        FileReader fr = null;
+        StringBuilder test= new StringBuilder();
+        try {
+
+            fr = new FileReader("src/main/resources/chcg.json");
+            br = new BufferedReader(fr);
+
+            String sCurrentLine;
+
+            while ((sCurrentLine = br.readLine()) != null) {
+                test.append(sCurrentLine);
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+    return test.toString();
     }
 }
