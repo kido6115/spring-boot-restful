@@ -9,18 +9,19 @@
  <div id="map"></div>
 <div id="button">
 </div>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgkSTUKQ5NYL99GCmZrNPEaXEoNHi2Mq0&callback=initMap">
-</script>
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgkSTUKQ5NYL99GCmZrNPEaXEoNHi2Mq0"></script>
 <script>
+    window.onload=function () {
+        initMap();
+    }
     function initMap() {
         var target = {lat:  23.972969, lng: 120.474307};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
             center: target
         });
-         map.data.loadGeoJson('http://localhost:8080/api/chcg');
-        map.data.loadGeoJson('http://localhost:8080/marker');
+         map.data.loadGeoJson('http://localhost:8090/api/chcg');
+        map.data.loadGeoJson('http://localhost:8090/marker');
         // var marker = new google.maps.Marker({
         //     position: target,
         //     map: map,

@@ -23,6 +23,10 @@ public class GisController {
     public String test(){
         return "gis.html";
     }
+    @RequestMapping("/road")
+    public String road(){
+        return "road-gis.html";
+    }
     @GetMapping("/marker")
     @ResponseBody
     public GeoJson marker(){
@@ -55,7 +59,7 @@ public class GisController {
             map1.put("coordinates", new double[]{double1, double2});
             feature.setGeometry(map1);
             Map<String,String> map2=new HashMap<>();
-            map2.put("icon","http://localhost:8080/icon");
+            map2.put("icon","http://localhost:8090/icon");
             feature.setProperties(map2);
             feature.setType("Feature");
             features.add(feature);
