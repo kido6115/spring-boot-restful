@@ -7,15 +7,20 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
-    maximum-pool-size: 10
+    hikari:
+      maximum-pool-size: 10
+
   h2:
     console:
       enabled: true
       path: /h2
-
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     show-sql: false
     database-platform: org.hibernate.dialect.H2Dialect
 server:
   port: 8090
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8080/oauth/check_token
