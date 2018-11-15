@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserTest {
     @Test
     public void test(){
+        System.out.println("ttttt");
         System.err.println("test");
     }
 }
