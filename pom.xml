@@ -85,6 +85,11 @@
 					<outputDirectory>${basedir}/target/test-reports</outputDirectory>
 				</configuration>
 			</plugin>
+
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
@@ -94,17 +99,8 @@
 						<format>xml</format>
 					</formats>
 				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>cobertura</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
-	</build>
-
+	</reporting>
 
 </project>
