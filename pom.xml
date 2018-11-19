@@ -117,8 +117,8 @@
 							<dataFile>target/jacoco.exec</dataFile>
 							<outputDirectory>target/jacoco-ut</outputDirectory>
 							<excludes>
-								<exclude>**/api/*.*</exclude>
-								<exclude>**/web/*.*</exclude>
+								<exclude>com/tist/web/**/*</exclude>
+                                <exclude>com/tist/api/**/*</exclude>
 
 							</excludes>
 						</configuration>
