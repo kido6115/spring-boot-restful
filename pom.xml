@@ -119,6 +119,7 @@
 							<excludes>
 								<exclude>**/web/*</exclude>
 								<exclude>**/api/*</exclude>
+								<exclude>**/domain/*</exclude>
 							</excludes>
 						</configuration>
 					</execution>
