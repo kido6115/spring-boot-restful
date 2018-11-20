@@ -1,15 +1,18 @@
 package com.sungyeh.api;
 
 import com.sungyeh.domain.Hero;
+import com.sungyeh.domain.Test;
 import com.sungyeh.domain.User;
 import com.sungyeh.service.HeroService;
 import com.sungyeh.service.UserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,8 +24,14 @@ public class ApiController {
     @Resource
     private UserService userService;
     @GetMapping("hero")
-    public List<Hero> findAllHeroes() {
-        return heroService.findAll();
+    public List<Test> findAllHeroes() {
+        List<Test> tests=new ArrayList<>();
+        heroService.findAll().forEach(hero -> {
+            Test test=new Test();
+            BeanUtils.copyProperties(hero,test);
+            tests.add(test);
+        });
+        return tests;
     }
 
     @GetMapping("user")
