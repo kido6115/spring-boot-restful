@@ -74,11 +74,6 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.7.8</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.interceptor</groupId>
-			<artifactId>javax.interceptor-api</artifactId>
-			<version>1.2</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -126,30 +121,6 @@
 								<exclude>**/api/*</exclude>
 								<exclude>**/domain/*</exclude>
 							</excludes>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.5</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<additionalparam>-Xdoclint:none</additionalparam>
-							<additionalDependencies>
-								<additionalDependency>
-									<groupId>javax.interceptor</groupId>
-									<artifactId>javax.interceptor-api</artifactId>
-									<version>1.2</version>
-								</additionalDependency>
-							</additionalDependencies>
 						</configuration>
 					</execution>
 				</executions>
