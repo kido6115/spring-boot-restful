@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
-@Service("com.sungyeh.service.Impl.HeroServiceImpl")
+@Service
 @Transactional
 public class HeroServiceImpl implements HeroService {
     @Resource
