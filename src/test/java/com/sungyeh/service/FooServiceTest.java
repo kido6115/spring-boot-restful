@@ -18,5 +18,7 @@ public class FooServiceTest {
     @Test
     public void foo(){
         assertThat(service.getStatus(true)).isFalse();
+        assertThat(service.getStatus(false)).isTrue();
+
     }
 }
